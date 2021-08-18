@@ -71,3 +71,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 controller -> route -> constant -> reducer -> store -> action -> screen -> bring action in and call it and get what we want from state
+
+create cart_reset because cart stays populated with previous orders even from other accounts. 
+
+placeorderscreen not working

@@ -6,6 +6,8 @@ import Message from '../components/Message'
 import { Link } from 'react-router-dom'
 import CheckoutSteps from '../components/CheckoutSteps'
 import { createOrder } from '../actions/orderActions'
+import { ORDER_CREATE_RESET } from '../constants/orderConstants'
+import { USER_DETAILS_RESET } from '../constants/userConstants'
 
 const PlaceOrderScreen = ({ history }) => {
     const dispatch = useDispatch()
@@ -27,6 +29,8 @@ const PlaceOrderScreen = ({ history }) => {
     useEffect(() => {
         if(success) {
             history.push(`/order/${order._id}`)
+            dispatch({ type: USER_DETAILS_RESET })
+            dispatch({ type: ORDER_CREATE_RESET })
         }
         // eslint-disable-next-line
     }, [history, success])
@@ -123,7 +127,14 @@ const PlaceOrderScreen = ({ history }) => {
                                 {error && <Message variant='danger'>{error}</Message>}
                             </ListGroup.Item>
                             <ListGroup.Item>
-                                <Button type='button' className='btn-block' disabled={cart.cartItems === 0} onClick={placeOrderHandler}>Place Order</Button>
+                                <Button 
+                                    type='button' 
+                                    className='btn-block' 
+                                    disabled={cart.cartItems === 0} 
+                                    onClick={placeOrderHandler}
+                                    >
+                                    Place Order
+                                    </Button>
                             </ListGroup.Item>
                         </ListGroup>
                     </Card>

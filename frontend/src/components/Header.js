@@ -22,7 +22,7 @@ const Header = () => {
                         <Navbar.Brand>
                             <img
                             alt=""
-                            src="/unibui_logo.svg"
+                            // src="/unibui_logo.svg"
                             className="d-inline-block align-top"
                             />
                         </Navbar.Brand>
@@ -54,7 +54,7 @@ const Header = () => {
                             <NavDropdown.Item>Products</NavDropdown.Item>
                         </LinkContainer>
                         <LinkContainer to='/admin/orderList'>
-                            <NavDropdown.Item>Orders</NavDropdown.Item>
+                            <NavDropdown.Item>Order</NavDropdown.Item>
                         </LinkContainer>
                     </NavDropdown>
                     )}
